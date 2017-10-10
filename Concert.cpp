@@ -28,8 +28,24 @@ Concert::Concert ( std::string name, std::tm date, int desire, std::string withF
 	this->friends.push_back(withFriend);
 }
 
-std::ostream& operator<<( std::ostream os, const Concert other ) {
-	os << this->date << "\t" << this->concertName << "\t" << this->desire << "\t" << friends;
+std::string Concert::getName () {
+	return concertName;
+}
+
+int Concert::getDesire () {
+	return desire;
+}
+
+std::tm Concert::getDate () {
+	return date;
+}
+
+std::vector<std::string> Concert::getFriends () {
+	return friends;
+}
+
+std::ostream& operator<<( std::ostream& os, Concert& other ) {
+	os << other.getName();//other.getDate << "\t" << other.getName << "\t" << other.getDesire << "\t" << other.getFriends;
 	return os;
 }
 
