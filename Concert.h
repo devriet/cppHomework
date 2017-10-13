@@ -17,12 +17,12 @@ public:
 	Concert( std::string name, std::tm date, int desire );
 	Concert( std::string name, std::tm date, int desire, std::vector<std::string> friends );
 	Concert( std::string name, std::tm date, int desire, std::string withFriend );
-	std::string getName ();
+	std::string getName () const;
 	int getDesire ();
 	std::tm getDate ();
 	std::vector<std::string> getFriends ();
-	bool operator<( const Concert& other ) const;
-	//std::ostream& operator<<( std::ostream& os, const Concert& other );
+	//bool operator<( const Concert& other ) const;
+	friend std::ostream& operator<<( std::ostream& os, const Concert& other );
 };
 
 #endif
