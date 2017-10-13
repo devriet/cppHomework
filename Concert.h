@@ -21,7 +21,7 @@ public:
 	int getDesire ();
 	std::tm getDate ();
 	std::vector<std::string> getFriends ();
-	//bool operator<( const Concert& other ) const;
+	bool operator<( const Concert& other ) const;
 	friend std::ostream& operator<<( std::ostream& os, const Concert& other );
 };
 

@@ -46,14 +46,31 @@ std::vector<std::string> Concert::getFriends () {
 
 /*
  *
+ *
  */
+
+bool Concert::operator<( const Concert& other ) const {
+	if ( date.tm_year < other.date.tm_year ) {
+		return true;
+	} else if ( date.tm_year > other.date.tm_year ) {
+		return false;
+	} else if ( date.tm_mon < other.date.tm_mon ) {
+		return true;
+	} else if ( date.tm_mon > other.date.tm_mon ) {
+		return false;
+	} else if ( date.tm_mday < other.date.tm_mday ) {
+		return true;
+	} else {
+		return false;
+	}
+}
 
 std::ostream& operator<<( std::ostream& os, const Concert& other ) {
 	os << other.date.tm_mon + 1 << "/" << 
 		other.date.tm_mday << "/" << 
 		other.date.tm_year + 1900 << 
 		"\t" << other.concertName << 
-		"\t" << other.desire;
+		"\t" << other.desire << "\n";
 	return os;
 }
 
